@@ -1,4 +1,4 @@
-# Arduino-Rotary-Fidget-Toy-W-Neopixel
+# Arduino Neopixel Rotary Fidget Toy
 A fun fidget thing made with Arduino IDE with Neopixels
 
 This is my first ever arduino project that uses a custom pcb but this project is still possible without it.
