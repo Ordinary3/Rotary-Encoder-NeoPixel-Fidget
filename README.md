@@ -19,7 +19,7 @@ some awg 26 wires
 1x Charging Module (Ex. TP4056)  
 2x Button (for Reset and Mode Change) 
 
-if you dont want to use the custom pcb just use a breadboard and some jumper wires
+if you dont want to use the custom pcb just use a breadboard and some jumper wires  
 Pin 6: Controls the NeoPixel ring. (Din)  
 Pin 2: Encoder Pin A (for reading rotary encoder position).  
 Pin 3: Encoder Pin B (for reading rotary encoder position).  
