@@ -1,6 +1,9 @@
-# Arduino Neopixel Rotary Fidget Toy
-A fun fidget thing made with Arduino IDE with Neopixels  
-designed using Kicad v.6 and uses Neopixel.h   
+## Arduino Neopixel Rotary Fidget Toy
+#Overview
+
+This project utilizes the Adafruit NeoPixel library to control a NeoPixel ring with various modes of operation, including color cycling, brightness adjustment, and strobe effects. The primary interface is a rotary encoder, which allows users to navigate between different modes and adjust parameters.
+
+PCB was designed using Kicad v.6
   
 Might remake the whole code using Fastled.h  
   
@@ -19,14 +22,26 @@ some awg 26 wires
 1x Charging Module (Ex. TP4056)  
 2x Button (for Reset and Mode Change) 
 
-if you dont want to use the custom pcb just use a breadboard and some jumper wires  
-Pin 6: Controls the NeoPixel ring. (Din)  
-Pin 2: Encoder Pin A (for reading rotary encoder position).  
-Pin 3: Encoder Pin B (for reading rotary encoder position).  
-Pin 4: Rotary encoder button (used for mode switching).  
-Pin 5: Vibration motor control.  
-Pin 7: Passive buzzer control.  
-then just plug the VCC and GND as usual
+#Features
+Rotary Encoder Control: Navigate through modes and adjust settings using a rotary encoder.
+Color Modes: Various color display modes including:
+Rainbow cycle
+Rainbow wave
+Rainbow pulse
+Color selection via encoder
+Brightness Adjustment: Adjust brightness using the encoder.
+Strobe Effect: Randomly activate strobe lights.
+RGB Slider: Smooth transition between RGB colors.
+
+#Wiring Diagram (for breadboard)
+Connect the components as follows:
+
+NeoPixel data pin to pin 6
+Rotary encoder pins A and B to pins 2 and 3 respectively
+Encoder button to pin 4
+Mode button to pin 7
+Vibration motor to pin 5
+Ensure to connect ground and power accordingly.
 
 ### Special thanks to pdp7  
 without them this project wouldnt exists  
