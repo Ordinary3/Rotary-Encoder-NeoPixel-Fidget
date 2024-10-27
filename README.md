@@ -3,6 +3,8 @@ Version 2 includes a better written system like better guide, custom modes, begi
 If you are not using a custom pcb then i suggest using the Version 1 or you can just edit the Read Encoder from V1 to V2
 Note that future docummentation is still needed
 
+Commercial use is not allowed except given permissions!
+
 ### Arduino Neopixel Rotary Fidget Toy
 **Overview**
 
