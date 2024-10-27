@@ -24,15 +24,16 @@ some awg 26 wires
 2x Button (for Reset and Mode Change) 
 
 ## Features:   
-Rotary Encoder Control: Navigate through modes and adjust settings using a rotary encoder.
-Color Modes: Various color display modes including:
-Rainbow cycle
-Rainbow wave
-Rainbow pulse
-Color selection via encoder
-Brightness Adjustment: Adjust brightness using the encoder.
-Strobe Effect: Randomly activate strobe lights.
-RGB Slider: Smooth transition between RGB colors.
+Rotary Encoder Control: Navigate through modes and adjust settings using a rotary encoder.  
+Color Modes: Various color display modes including:  
+Rainbow cycle  
+Rainbow wave  
+Rainbow pulse    
+Color selection via encoder    
+Brightness Adjustment: Adjust brightness using the encoder.  
+Strobe Effect: Randomly activate strobe lights.  
+RGB Slider: Smooth transition between RGB colors.  
+NEW Memory game: Pick the pattern of a led to win.  
 
 ## Wiring Diagram (for breadboard):  
 Connect the components as follows:  
