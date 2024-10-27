@@ -138,22 +138,22 @@ void handleMenu() {
       showRainbow(5); // Rainbow effect for mode 1
       return; // Skip default color setting
     case 2:
-      showRainbow(1); // Rainbow effect for mode 2
+      showRainbow(1); // Rainbow effect again for mode 2
       return; // Skip default color setting
     case 3:
-      flashRedBlue(); // Rainbow effect for mode 3
+      flashRedBlue(); // Strobe Effect police
       return; // Skip default color setting
     case 4:
-      slowrise(); // Rainbow effect for mode 4
+      slowrise(); // Controll Brightness
       return; // Skip default color setting
     case 5:
-      showRainbow(20); // Rainbow effect for mode 5
+      showRainbow(20); // RGB Slider
       return; // Skip default color setting
     case 6:
-      pixels.setPixelColor(menuMode, pixels.Color(255, 255, 255)); // Magenta for mode 6
+      pixels.setPixelColor(menuMode, pixels.Color(255, 255, 255)); //Random Pattern
       break;
     case 7:
-      pixels.setPixelColor(menuMode, pixels.Color(0, 255, 0)); // Magenta for mode 6
+      pixels.setPixelColor(menuMode, pixels.Color(0, 255, 0)); // Memory game
       break;
   }
 
