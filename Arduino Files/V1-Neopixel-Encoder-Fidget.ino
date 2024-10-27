@@ -169,7 +169,7 @@ void modeFollowRotaryMirrored(long pos) {
   if (pos != oldPosition) {
     digitalWrite(VIBRATION_MOTOR_PIN, HIGH);  // Turn on motor
     tone(BUZZER_PIN, buzzerFrequency);  // Play buzzer sound at the calculated frequency
-    delay(80);  // Adjust vibration and buzzer duration as needed
+    delay(25);  // Adjust vibration and buzzer duration as needed
     digitalWrite(VIBRATION_MOTOR_PIN, LOW);   // Turn off motor
     noTone(BUZZER_PIN);  // Stop buzzer sound
   }

@@ -209,13 +209,13 @@ void checkEncoderButton() {
   bool currentButtonState = digitalRead(ENCODER_BTN);
 
   if (lastButtonState == HIGH && currentButtonState == LOW) { // Button pressed
-
+  
+    vibrate(); // Activate vibration motor
     if (mode == 1) { // If in RGB slider mode
       rainbowMode = (rainbowMode + 1) % 3; // Cycle through 3 rainbow animations
     } else if (mode == 5) { // If in RGB slider mode
       RgbSliderMode = (RgbSliderMode + 1) % 3; // Cycle through 3 rainbow animations
     }
-    vibrate(); // Activate vibration motor
     delay(50); // Short debounce delay
   }
 
@@ -296,7 +296,7 @@ void followEncoder() {
 
 void vibrate() {
   digitalWrite(VIBRATION_MOTOR_PIN, HIGH); // Turn on the vibration motor
-  delay(50); // Duration of the vibration
+  delay(25); // Duration of the vibration
   digitalWrite(VIBRATION_MOTOR_PIN, LOW); // Turn off the vibration motor
 }
 
