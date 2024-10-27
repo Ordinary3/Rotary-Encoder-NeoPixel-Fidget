@@ -1,3 +1,8 @@
+## **VERSION 2 HAS BEEN RELEASED 🎉**  
+Version 2 includes a better written system like better guide, custom modes, beginer friendly, easier to read, etc
+If you are not using a custom pcb then i suggest using the Version 1 or you can just edit the Read Encoder from V1 to V2
+Note that future docummentation is still needed
+
 ### Arduino Neopixel Rotary Fidget Toy
 **Overview**
 
@@ -13,7 +18,7 @@ This is my first ever arduino project that uses a custom pcb but **this project 
 1x Arduino Nano or LGT8F328p  
 1x EC11 Rotary Encoder OR a EC11 Rotary Encoder with breakout pcb  
 1x Neopixel 16 Ring (Go ahead if you want to use other versions like the 24 and so on)  
-1x Passive Buzzer   
+1x Passive Buzzer   (Optional)
 1x Vibration Module  
 some awg 26 wires
   
