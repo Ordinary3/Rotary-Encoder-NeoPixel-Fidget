@@ -1,50 +1,80 @@
-## **VERSION 2 HAS BEEN RELEASED 🎉**  
-Version 2 introduces significant improvements, including a well-structured guide, custom modes, enhanced readability, and a more beginner-friendly experience. If you are not using a custom PCB, we recommend sticking with Version 1 or modifying the Read Encoder from Version 1 to Version 2. Please note that additional documentation is still pending.
+**RELEASE NOTES: Version 2 🎉**
+=====================================
 
-Commercial use is prohibited without explicit permission. However, you are welcome to use this project for educational purposes or personal development.
+**Summary**
+-----------
+
+Version 2 brings significant enhancements to the Arduino Neopixel Rotary Fidget Toy project, including:
+
+* **Improved Structure**: Enhanced guide for easier navigation
+* **Custom Modes**: Expanded functionality for a more engaging experience
+* **Readability Updates**: Cleaner code for better understanding
+* **Beginner-Friendly**: Simplified setup and operation for new users
+
+**Important Notes**
+-------------------
+
+* **Compatibility**: If not using a custom PCB, consider sticking with Version 1 or adapting the Read Encoder from Version 1.
+* **Documentation**: Additional resources are pending and will be updated soon.
+* **Licensing**: 
+	+ **Commercial Use**: Prohibited without explicit permission.
+	+ **Educational/Personal Use**: Permitted for learning and personal projects.
+
+**Project Overview**
+--------------------
 
 ### Arduino Neopixel Rotary Fidget Toy
-**Overview**
 
-This project leverages the Adafruit NeoPixel library to control a NeoPixel ring, offering various operational modes such as color cycling, brightness adjustment, and strobe effects. The main interface utilizes a rotary encoder, enabling users to seamlessly navigate between different modes and adjust settings.
+* **Description**: Control a NeoPixel ring with various modes (color cycling, brightness adjustment, strobe effects) using a rotary encoder.
+* **Design Tools**: KiCad v.6 (PCB design)
+* **Future Plans**: Potential code rewrite using FastLED.h
 
-The PCB was designed using KiCad v.6, and there are plans to potentially rewrite the entire code using FastLED.h. While this is my first Arduino project featuring a custom PCB, it is important to note that the project can still be implemented without one.
-  
-## Required Parts:  
-1x Arduino Nano or LGT8F328p  
-1x EC11 Rotary Encoder OR a EC11 Rotary Encoder with breakout pcb  
-1x Neopixel 16 Ring (Go ahead if you want to use other versions like the 24 and so on)  
-1x Passive Buzzer   (Optional)
-1x Vibration Module  
-some awg 26 wires
-  
-**Optional:**  
-1x Switch (Power On/Off)  
-1x Charging Module (Ex. TP4056)  
-2x Button (for Reset and Mode Change) 
+**Required Components**
+------------------------
 
-## Features:   
-Rotary Encoder Control: Navigate through modes and adjust settings using a rotary encoder.  
-Color Modes: Various color display modes including:  
-Rainbow cycle  
-Rainbow wave  
-Rainbow pulse    
-Color selection via encoder    
-Brightness Adjustment: Adjust brightness using the encoder.  
-Strobe Effect: Randomly activate strobe lights.  
-RGB Slider: Smooth transition between RGB colors.  
-NEW Memory game: Pick the pattern of a led to win.  
+1. **Microcontroller**: Arduino Nano or LGT8F328p
+2. **Rotary Encoder**: EC11 (with or without breakout PCB)
+3. **NeoPixel Ring**: 16 LEDs (you can use any version just edit #define NUM_PIXELS [n])
+4. **Vibration Module**
+5. **AWG 26 Wires**
+6. **Button** (2) (For Mode switch and Reset)
 
-## Wiring Diagram (for breadboard):  
-Connect the components as follows:  
+**Optional Components**
+-----------------------
 
-NeoPixel data pin to pin 6  
-Rotary encoder pins A and B to pins 2 and 3 respectively  
-Encoder button to pin 4  
-Mode button to pin 7  
-Vibration motor to pin 5  
-Ensure to connect ground and power accordingly.  
+1. **Slide Switch**
+2. **Charging Module** (e.g., TP4056)
+3. **Lipo Batt**
+4. **Passive Buzzer** (Optional)
 
-### Special thanks to pdp7  
-Special thanks to [pdp7](https://github.com/pdp7/rotary-encoder-breakout) for their invaluable contributions; this project would not exist without their support. The original pcb was a fork of their breakout board
-  
+**Key Features**
+----------------
+
+* **Rotary Encoder Control**: Navigate modes and adjust settings
+* **Color Modes**:
+	+ Rainbow Cycle
+	+ Rainbow Wave
+	+ Rainbow Pulse
+	+ Encoder-driven Color Selection
+* **Brightness Adjustment**: Encoder-controlled
+* **Strobe Effect**: Random strobe light activation
+* **RGB Slider**: Smooth RGB color transitions
+* **NEW Memory Game**: Identify LED patterns to win
+
+**Breadboard Wiring Diagram**
+-----------------------------
+
+| Component | Arduino Pin |
+| --- | --- |
+| NeoPixel Data | 6 |
+| Rotary Encoder A | 2 |
+| Rotary Encoder B | 3 |
+| Encoder Button | 4 |
+| Mode Button | 7 |
+| Vibration Motor | 5 |
+| **Remember to connect Ground and Power accordingly.** |
+
+**Acknowledgments**
+------------------
+
+* **Special Thanks to [pdp7](https://github.com/pdp7/rotary-encoder-breakout)**: This project is initially forked from their breakout board design.
