@@ -193,6 +193,7 @@ void checkModeButton() {
       // Confirm selection and set mode based on menu selection
       mode = menuMode;
       vibrate();
+      resetGame();
     } else {
       // Switch to menu mode
       mode = -1; // Use -1 to indicate menu mode
@@ -575,17 +576,17 @@ void rememberingGame() {
   if (!gameActive) {
     // Start the game and generate the first sequence
     gameActive = true;
-      for (int pos = 0; pos < NUM_PIXELS; pos++) {
-    for (int i = 0; i < NUM_PIXELS; i++) {
-      int brightness = 0;
-      if (abs(i - pos) <= waveFade) {
-        brightness = map(abs(i - pos), 0, waveFade, waveBrightness, 0);
+    for (int pos = 0; pos < NUM_PIXELS; pos++) {
+      for (int i = 0; i < NUM_PIXELS; i++) {
+        int brightness = 0;
+        if (abs(i - pos) <= waveFade) {
+          brightness = map(abs(i - pos), 0, waveFade, waveBrightness, 0);
+        }
+        pixels.setPixelColor(i, pixels.Color(brightness, brightness, brightness));
       }
-      pixels.setPixelColor(i, pixels.Color(brightness, brightness, brightness));
+      pixels.show();
+      delay(waveSpeed);
     }
-    pixels.show();
-    delay(waveSpeed);
-  }
     generateSequence();
     showSequence();
     waitingForSelection = true;
@@ -595,6 +596,10 @@ void rememberingGame() {
   // Continuously update the LED strip to show the encoder's position
   if (waitingForSelection) {
     pixels.clear();
+    // **New Addition: Light up correctly selected LEDs**
+    for (int i = 0; i < currentTarget; i++) {
+      pixels.setPixelColor(targetSequence[i], pixels.Color(0, 255, 0)); // Green for correct selections
+    }
     pixels.setPixelColor(encoderPos, pixels.Color(255, 255, 255)); // Show white LED for encoder position
     pixels.show();
   }
@@ -609,17 +614,17 @@ void rememberingGame() {
       if (currentTarget >= level) {
         // Level up if all targets are correctly selected
         level++;
-  for (int pos = 0; pos < NUM_PIXELS; pos++) {
-    for (int i = 0; i < NUM_PIXELS; i++) {
-      int brightness = 0;
-      if (abs(i - pos) <= waveFade) {
-        brightness = map(abs(i - pos), 0, waveFade, waveBrightness, 0);
-      }
-      pixels.setPixelColor(i, pixels.Color(brightness, brightness, brightness));
-    }
-    pixels.show();
-    delay(waveSpeed);
-  }
+        for (int pos = 0; pos < NUM_PIXELS; pos++) {
+          for (int i = 0; i < NUM_PIXELS; i++) {
+            int brightness = 0;
+            if (abs(i - pos) <= waveFade) {
+              brightness = map(abs(i - pos), 0, waveFade, waveBrightness, 0);
+            }
+            pixels.setPixelColor(i, pixels.Color(brightness, brightness, brightness));
+          }
+          pixels.show();
+          delay(waveSpeed);
+        }
         generateSequence();   // Generate new sequence for the next level
         showSequence();       // Show the new sequence
         currentTarget = 0;    // Reset target selection
