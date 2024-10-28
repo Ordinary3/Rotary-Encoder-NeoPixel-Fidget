@@ -138,22 +138,22 @@ void handleMenu() {
       showRainbow(5); // Rainbow effect for mode 1
       return; // Skip default color setting
     case 2:
-      showRainbow(1); // Rainbow effect again for mode 2
+      showRainbow(1); // Rainbow effect for mode 2
       return; // Skip default color setting
     case 3:
-      flashRedBlue(); // Strobe Effect police
+      flashRedBlue(); // Rainbow effect for mode 3
       return; // Skip default color setting
     case 4:
-      slowrise(); // Controll Brightness
+      slowrise(); // Rainbow effect for mode 4
       return; // Skip default color setting
     case 5:
-      showRainbow(20); // RGB Slider
+      showRainbow(20); // Rainbow effect for mode 5
       return; // Skip default color setting
     case 6:
-      pixels.setPixelColor(menuMode, pixels.Color(255, 255, 255)); //Random Pattern
+      pixels.setPixelColor(menuMode, pixels.Color(255, 255, 255)); // Magenta for mode 6
       break;
     case 7:
-      pixels.setPixelColor(menuMode, pixels.Color(0, 255, 0)); // Memory game
+      pixels.setPixelColor(menuMode, pixels.Color(0, 255, 0)); // Magenta for mode 6
       break;
   }
 
@@ -575,6 +575,17 @@ void rememberingGame() {
   if (!gameActive) {
     // Start the game and generate the first sequence
     gameActive = true;
+      for (int pos = 0; pos < NUM_PIXELS; pos++) {
+    for (int i = 0; i < NUM_PIXELS; i++) {
+      int brightness = 0;
+      if (abs(i - pos) <= waveFade) {
+        brightness = map(abs(i - pos), 0, waveFade, waveBrightness, 0);
+      }
+      pixels.setPixelColor(i, pixels.Color(brightness, brightness, brightness));
+    }
+    pixels.show();
+    delay(waveSpeed);
+  }
     generateSequence();
     showSequence();
     waitingForSelection = true;
