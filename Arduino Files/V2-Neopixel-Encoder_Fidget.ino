@@ -193,7 +193,7 @@ void checkModeButton() {
       // Confirm selection and set mode based on menu selection
       mode = menuMode;
       vibrate();
-      resetGame();
+      ClearRemmemberGame();
     } else {
       // Switch to menu mode
       mode = -1; // Use -1 to indicate menu mode
@@ -217,6 +217,14 @@ void checkEncoderButton() {
     } else if (mode == 5) { // If in RGB slider mode
       RgbSliderMode = (RgbSliderMode + 1) % 3; // Cycle through 3 rainbow animations
     }
+
+    if (mode == -1) { // If in menu mode
+      // Confirm selection and set mode based on menu selection
+      mode = menuMode;
+      vibrate();
+      ClearRemmemberGame();
+    }
+
     delay(50); // Short debounce delay
   }
 
@@ -570,7 +578,7 @@ bool waitingForSelection = false;      // Whether waiting for user to select the
 
 void rememberingGame() {
   const int waveSpeed = 30; // Adjust speed (lower = faster)
-  const int waveBrightness = 255; // Maximum brightness
+  const int waveBrightness = brightness; // Maximum brightness
   const int waveFade = 2; // Fade amount (higher = more gradual)
 
   if (!gameActive) {
@@ -598,9 +606,9 @@ void rememberingGame() {
     pixels.clear();
     // **New Addition: Light up correctly selected LEDs**
     for (int i = 0; i < currentTarget; i++) {
-      pixels.setPixelColor(targetSequence[i], pixels.Color(0, 255, 0)); // Green for correct selections
+      pixels.setPixelColor(targetSequence[i], pixels.Color(0, brightness, 0)); // Green for correct selections
     }
-    pixels.setPixelColor(encoderPos, pixels.Color(255, 255, 255)); // Show white LED for encoder position
+    pixels.setPixelColor(encoderPos, pixels.Color(brightness, brightness, brightness)); // Show white LED for encoder position
     pixels.show();
   }
   
@@ -647,7 +655,7 @@ void generateSequence() {
 void showSequence() {
   pixels.clear();
   for (int i = 0; i < level; i++) {
-    pixels.setPixelColor(targetSequence[i], pixels.Color(0, 255, 0)); // Show green LED
+    pixels.setPixelColor(targetSequence[i], pixels.Color(0, brightness, 0)); // Show green LED
     pixels.show();
     delay(500);                 // Show each LED for half a second
     pixels.setPixelColor(targetSequence[i], 0); // Turn off LED
@@ -665,7 +673,7 @@ void resetGame() {
   // Optionally, flash all LEDs red as an indicator of failure
   for (int i = 0; i < 3; i++) {
     for (int j = 0; j < NUM_PIXELS; j++) {
-      pixels.setPixelColor(j, pixels.Color(255, 0, 0)); // Red flash
+      pixels.setPixelColor(j, pixels.Color(brightness, 0, 0)); // Red flash
     }
     pixels.show();
     delay(200);
@@ -673,4 +681,10 @@ void resetGame() {
     pixels.show();
     delay(200);
   }
+}
+
+void ClearRemmemberGame() {
+  gameActive = false;
+  level = 1;
+  currentTarget = 0;
 }
