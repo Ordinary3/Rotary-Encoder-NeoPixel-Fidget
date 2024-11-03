@@ -14,7 +14,7 @@ Version 2 brings significant enhancements to the Arduino Neopixel Rotary Fidget 
 **Important Notes**
 -------------------
 
-* **Compatibility**: If not using a custom PCB, consider sticking with Version 1 or adapting the Read Encoder from Version 1.
+* **Compatibility**: If not using a custom PCB, consider sticking with Version 1 or adapting the Read Encoder from Version 1. some breakout  support Version 2.
 * **Documentation**: Additional resources are pending and will be updated soon.
 * **Licensing**: 
 	+ **Commercial Use**: Prohibited without explicit permission.
